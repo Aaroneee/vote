@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pbc.vote.mapper.TaskDetailsMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.pbc.vote.entity.TaskDetails">
+        <id column="id" property="id" />
+        <result column="task_id" property="taskId" />
+        <result column="user_id" property="userId" />
+        <result column="pro_de" property="proDe" />
+        <result column="pro_neng" property="proNeng" />
+        <result column="pro_qin" property="proQin" />
+        <result column="pro_ji" property="proJi" />
+        <result column="pro_lian" property="proLian" />
+        <result column="pro_count" property="proCount" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, task_id, user_id, pro_de, pro_neng, pro_qin, pro_ji, pro_lian, pro_count
+    </sql>
+
+</mapper>

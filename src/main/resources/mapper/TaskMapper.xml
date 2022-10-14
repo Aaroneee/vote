@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pbc.vote.mapper.TaskMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.pbc.vote.entity.Task">
+        <id column="id" property="id" />
+        <result column="task_name" property="taskName" />
+        <result column="test_user_id" property="testUserId" />
+        <result column="create_date" property="createDate" />
+        <result column="start_date" property="startDate" />
+        <result column="end_date" property="endDate" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, task_name, test_user_id, create_date, start_date, end_date
+    </sql>
+    <select id="queryList" resultType="com.pbc.vote.model.vo.TaskVO">
+        SELECT
+            t_task.*,
+            t_user.`name` AS testUser
+        FROM
+            t_task
+                LEFT JOIN t_user ON t_task.test_user_id = t_user.id
+    </select>
+
+
+</mapper>
